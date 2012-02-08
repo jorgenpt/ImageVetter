@@ -8,6 +8,8 @@
 
 #import "ImageVetterAppDelegate.h"
 
+#define DEFAULT_BROWSE_DIRECTORY @"/Users/jorgenpt/Pictures/Events"
+
 @interface ImageVetterAppDelegate ()
 
 @property (retain) NSString *path;
@@ -115,7 +117,7 @@
     
     [panel setCanChooseFiles:NO];
     [panel setCanChooseDirectories:YES];
-    [panel setDirectoryURL:[NSURL fileURLWithPath:@"/Users/jorgenpt/Pictures/Events"]];
+    [panel setDirectoryURL:[NSURL fileURLWithPath:DEFAULT_BROWSE_DIRECTORY]];
     [panel beginSheetModalForWindow:window
                   completionHandler:^ (NSInteger result) {
                       if (result == NSFileHandlingPanelCancelButton)
